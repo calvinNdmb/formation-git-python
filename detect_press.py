@@ -3,12 +3,6 @@ import pygame
 # Initialisation de pygame
 pygame.init()
 
-# Création d'une fenêtre de jeu
-screen = pygame.display.set_mode((400, 400))
-
-# Titre de la fenêtre
-pygame.display.set_caption("Détection des touches")
-
 
 def detect_press():
     # Valeur par défaut : aucune touche appuyée
@@ -43,12 +37,3 @@ def detect_press():
 
     # On retourne la direction détectée
     return direction
-
-
-# Boucle principale du programme
-while True:
-    direction = detect_press()
-
-    # Si une direction a été détectée, on l'affiche
-    if direction is not None:
-        print("Direction détectée :", direction)
