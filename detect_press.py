@@ -1,39 +1,24 @@
-import pygame
+import msvcrt
 
-# Initialisation de pygame
-pygame.init()
+ACTIONS = {
+    'z': 'up',
+    'q': 'left',
+    's': 'down',
+    'd': 'right',
+}
 
 
 def detect_press():
-    # Valeur par défaut : aucune touche appuyée
-    direction = None
+    """Attend une touche et renvoie la direction correspondante, ou None."""
+    key = msvcrt.getch()
 
-    # On récupère tous les événements
-    for event in pygame.event.get():
-
-        # Si l'utilisateur ferme la fenêtre
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            quit()
-
-        # Si une touche du clavier est appuyée
-        if event.type == pygame.KEYDOWN:
-
-            # Si flèche du haut
-            if event.key == pygame.K_UP:
-                direction = "UP"
-
-            # Si flèche du bas
-            elif event.key == pygame.K_DOWN:
-                direction = "DOWN"
-
-            # Si flèche gauche
-            elif event.key == pygame.K_LEFT:
-                direction = "LEFT"
-
-            # Si flèche droite
-            elif event.key == pygame.K_RIGHT:
-                direction = "RIGHT"
-
-    # On retourne la direction détectée
-    return direction
+    if key == b'\x1b':  # Echap
+        return 'quit'
+    elif key in (b'\xe0', b'\x00'):  # Touche spéciale (flèches, F1...) — on ignore
+        msvcrt.getch()  # consomme le 2e octet
+        return None
+    else:
+        ch = key.decode('utf-8', errors='replace').lower()
+        if ch in ACTIONS:
+            return ACTIONS[ch]
+        return None

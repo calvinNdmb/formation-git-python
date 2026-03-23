@@ -19,6 +19,8 @@ def main():
         direction = detect_press()
         if direction == "quit":
             break
+        if direction is None:
+            continue
         snake_coords[0], snake_coords[1] = newCoords(snake_coords[0], snake_coords[1], direction)
         snake_coords[0] = max(0, min(9, snake_coords[0]))
         snake_coords[1] = max(0, min(9, snake_coords[1]))
