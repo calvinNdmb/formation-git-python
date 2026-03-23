@@ -19,4 +19,3 @@ def addition(x,y):
 resultat = addition(3,4)
 print(resultat)#affiche le résultat de l'addition
 
-#xcvbnhj,klmlkjhgfdxc vbn,
