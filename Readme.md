@@ -37,3 +37,9 @@ Compilation de cours et tutoriels pour le développement web et la programmation
 ## Site portfolio exemple
 - Dans le dossier `site-portfolio`
 
+## Ebergement gratuit
+- [Vercel](https://vercel.com/)
+- [Netlify](https://www.netlify.com/)
+
+## Acheter un nom de domaine
+- [OVH](https://www.ovh.com/fr/domaines/)
