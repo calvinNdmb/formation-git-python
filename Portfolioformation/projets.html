@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets — Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#FAF7F2',
+                        'cream-dark': '#F0EBE3',
+                        'taupe-light': '#D5C7B8',
+                        'taupe': '#B8A99A',
+                        'taupe-dark': '#8C7B6B',
+                        'taupe-darker': '#6B5D50',
+                        'text-dark': '#3D3428',
+                        'text-light': '#7A6E62',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        '4xl': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-body text-text-dark bg-cream">
+
+    <!-- Navbar -->
+    <nav class="navbar fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="font-display text-2xl font-bold text-text-dark tracking-tight">Portfolio</a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link text-text-light hover:text-text-dark transition-colors duration-300 font-medium">Accueil</a>
+                <a href="projets.html" class="nav-link text-text-dark font-semibold border-b-2 border-taupe-dark pb-0.5 transition-colors duration-300">Projets</a>
+            </div>
+            <button class="hamburger md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
+                <span class="block w-6 h-0.5 bg-text-dark transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-text-dark transition-all duration-300"></span>
+                <span class="block w-6 h-0.5 bg-text-dark transition-all duration-300"></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white/95 backdrop-blur-md border-t border-cream-dark">
+            <div class="flex flex-col items-center gap-6 py-8">
+                <a href="index.html" class="nav-link text-text-light hover:text-text-dark transition-colors duration-300 font-medium text-lg">Accueil</a>
+                <a href="projets.html" class="nav-link text-text-dark font-semibold text-lg">Projets</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header Section -->
+    <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-24 pb-12">
+        <!-- Decorative Blobs -->
+        <div class="blob absolute top-10 left-10 w-32 h-32 bg-taupe-light/30 rounded-full blur-2xl float"></div>
+        <div class="blob absolute bottom-10 right-16 w-40 h-40 bg-cream-dark/60 rounded-full blur-3xl float" style="animation-delay: -2s;"></div>
+        <div class="blob absolute top-1/2 left-1/3 w-24 h-24 bg-taupe/20 rounded-full blur-xl float" style="animation-delay: -4s;"></div>
+
+        <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-text-dark mb-6 fade-up">Mes Projets</h1>
+            <p class="text-text-light text-lg md:text-xl leading-relaxed fade-up" style="animation-delay: 0.2s;">
+                Découvrez une sélection de mes réalisations les plus récentes
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section class="max-w-7xl mx-auto px-6 pb-8">
+        <div class="flex flex-wrap justify-center gap-3 fade-up" style="animation-delay: 0.3s;">
+            <button class="filter-btn bg-taupe-dark text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-md" data-filter="all">Tous</button>
+            <button class="filter-btn bg-white text-taupe-dark px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-md border border-cream-dark" data-filter="web">Web</button>
+            <button class="filter-btn bg-white text-taupe-dark px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-md border border-cream-dark" data-filter="design">Design</button>
+            <button class="filter-btn bg-white text-taupe-dark px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 hover:shadow-md border border-cream-dark" data-filter="mobile">Mobile</button>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Project 1: E-Commerce Luxe -->
+            <div class="project-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 fade-up" data-category="web" style="animation-delay: 0.1s;">
+                <div class="relative bg-cream-dark aspect-[16/10] flex items-center justify-center rounded-t-3xl">
+                    <svg class="w-16 h-16 text-taupe/40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block bg-taupe-light/40 text-taupe-darker text-xs font-medium px-3 py-1 rounded-full mb-3">Web</span>
+                    <h3 class="font-display text-xl font-bold text-text-dark mb-2">E-Commerce Luxe</h3>
+                    <p class="text-text-light text-sm leading-relaxed mb-4">
+                        Plateforme e-commerce haut de gamme avec une expérience utilisateur raffinée, intégrant un système de paiement sécurisé et un design élégant.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-taupe-dark font-medium text-sm hover:underline group">
+                        Voir le projet
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2: Application Fitness -->
+            <div class="project-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 fade-up" data-category="mobile" style="animation-delay: 0.2s;">
+                <div class="relative bg-taupe-light aspect-[16/10] flex items-center justify-center rounded-t-3xl">
+                    <svg class="w-16 h-16 text-taupe-dark/40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block bg-taupe-light/40 text-taupe-darker text-xs font-medium px-3 py-1 rounded-full mb-3">Mobile</span>
+                    <h3 class="font-display text-xl font-bold text-text-dark mb-2">Application Fitness</h3>
+                    <p class="text-text-light text-sm leading-relaxed mb-4">
+                        Application mobile de suivi sportif avec programmes personnalisés, statistiques détaillées et intégration de capteurs de santé connectés.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-taupe-dark font-medium text-sm hover:underline group">
+                        Voir le projet
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3: Dashboard Analytics -->
+            <div class="project-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 fade-up" data-category="web" style="animation-delay: 0.3s;">
+                <div class="relative bg-taupe/30 aspect-[16/10] flex items-center justify-center rounded-t-3xl">
+                    <svg class="w-16 h-16 text-taupe-dark/40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block bg-taupe-light/40 text-taupe-darker text-xs font-medium px-3 py-1 rounded-full mb-3">Web</span>
+                    <h3 class="font-display text-xl font-bold text-text-dark mb-2">Dashboard Analytics</h3>
+                    <p class="text-text-light text-sm leading-relaxed mb-4">
+                        Tableau de bord interactif pour la visualisation de données complexes, avec graphiques dynamiques et rapports exportables en temps réel.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-taupe-dark font-medium text-sm hover:underline group">
+                        Voir le projet
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 4: Brand Identity Studio -->
+            <div class="project-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 fade-up" data-category="design" style="animation-delay: 0.4s;">
+                <div class="relative bg-cream-dark aspect-[16/10] flex items-center justify-center rounded-t-3xl">
+                    <svg class="w-16 h-16 text-taupe/40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.098 19.902a3.75 3.75 0 005.304 0l6.401-6.402M6.75 21A3.75 3.75 0 013 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 003.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008z"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block bg-taupe-light/40 text-taupe-darker text-xs font-medium px-3 py-1 rounded-full mb-3">Design</span>
+                    <h3 class="font-display text-xl font-bold text-text-dark mb-2">Brand Identity Studio</h3>
+                    <p class="text-text-light text-sm leading-relaxed mb-4">
+                        Création complète d'identité visuelle pour un studio créatif, incluant logo, charte graphique, supports print et digital harmonisés.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-taupe-dark font-medium text-sm hover:underline group">
+                        Voir le projet
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 5: Blog Culinaire -->
+            <div class="project-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 fade-up" data-category="web" style="animation-delay: 0.5s;">
+                <div class="relative bg-taupe-light aspect-[16/10] flex items-center justify-center rounded-t-3xl">
+                    <svg class="w-16 h-16 text-taupe-dark/40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block bg-taupe-light/40 text-taupe-darker text-xs font-medium px-3 py-1 rounded-full mb-3">Web</span>
+                    <h3 class="font-display text-xl font-bold text-text-dark mb-2">Blog Culinaire</h3>
+                    <p class="text-text-light text-sm leading-relaxed mb-4">
+                        Blog gastronomique avec mise en page immersive, recettes interactives, système de recherche avancé et galerie photo haute qualité.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-taupe-dark font-medium text-sm hover:underline group">
+                        Voir le projet
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 6: Application Voyage -->
+            <div class="project-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 fade-up" data-category="mobile" style="animation-delay: 0.6s;">
+                <div class="relative bg-cream-dark aspect-[16/10] flex items-center justify-center rounded-t-3xl">
+                    <svg class="w-16 h-16 text-taupe/40" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <span class="inline-block bg-taupe-light/40 text-taupe-darker text-xs font-medium px-3 py-1 rounded-full mb-3">Mobile</span>
+                    <h3 class="font-display text-xl font-bold text-text-dark mb-2">Application Voyage</h3>
+                    <p class="text-text-light text-sm leading-relaxed mb-4">
+                        Application de planification de voyages avec itinéraires personnalisés, recommandations locales et partage d'expériences entre voyageurs.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 text-taupe-dark font-medium text-sm hover:underline group">
+                        Voir le projet
+                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="bg-taupe-dark rounded-3xl px-8 py-16 md:px-16 md:py-20 text-center fade-up">
+            <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">Vous avez un projet en tête ?</h2>
+            <p class="text-white/80 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                N'hésitez pas à me contacter pour discuter de votre projet
+            </p>
+            <a href="index.html#contact" class="inline-block bg-white text-taupe-dark font-semibold px-8 py-4 rounded-full text-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
+                Me contacter
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-text-dark text-white">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- About -->
+                <div>
+                    <h3 class="font-display text-2xl font-bold mb-4">Portfolio</h3>
+                    <p class="text-white/60 leading-relaxed">
+                        Développeur et designer passionné, je crée des expériences numériques uniques et mémorables qui allient esthétique et performance.
+                    </p>
+                </div>
+                <!-- Navigation -->
+                <div>
+                    <h4 class="font-display text-lg font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/60 hover:text-white transition-colors duration-300">Accueil</a></li>
+                        <li><a href="projets.html" class="text-white/60 hover:text-white transition-colors duration-300">Projets</a></li>
+                        <li><a href="index.html#about" class="text-white/60 hover:text-white transition-colors duration-300">À propos</a></li>
+                        <li><a href="index.html#contact" class="text-white/60 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-display text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="text-white/60">
+                            <a href="mailto:hello@monportfolio.fr" class="hover:text-white transition-colors duration-300">hello@monportfolio.fr</a>
+                        </li>
+                        <li class="text-white/60">+33 1 23 45 67 89</li>
+                        <li class="text-white/60">Paris, France</li>
+                    </ul>
+                    <!-- Social Icons -->
+                    <div class="flex gap-4 mt-6">
+                        <!-- LinkedIn -->
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors duration-300" aria-label="LinkedIn">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <!-- GitHub -->
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors duration-300" aria-label="GitHub">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <!-- Twitter -->
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors duration-300" aria-label="Twitter">
+                            <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-white/40 text-sm">&copy; 2026 Portfolio. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-taupe-dark', 'text-white');
+                    b.classList.add('bg-white', 'text-taupe-dark');
+                });
+                btn.classList.remove('bg-white', 'text-taupe-dark');
+                btn.classList.add('bg-taupe-dark', 'text-white');
+
+                const category = btn.dataset.filter;
+                cards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = '';
+                        card.classList.remove('visible');
+                        setTimeout(() => card.classList.add('visible'), 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
