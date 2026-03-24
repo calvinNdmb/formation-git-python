@@ -13,7 +13,7 @@ Compilation de cours et tutoriels pour le développement web et la programmation
 - [Cours Vibe Coding (Anglais) - Vidéo 2](https://youtu.be/mZzhfPle9QU?si=yXdq7cmlzTXgswWK)
 - [Cours Vibe Coding (Français)](https://www.youtube.com/watch?v=lgg8MgEFVss)
 
-## n8n (JJe ne suis pas spécialiste mais la formation est très complète)
+## n8n (Je ne suis pas spécialiste mais la formation est très complète)
 
 - [Cours n8n (Anglais)](https://www.youtube.com/watch?v=YjH8s9Xo2lE&list=PL4cUxeGkcC9hNTz3sxqGTfxAwU-DIHJd2)
 
