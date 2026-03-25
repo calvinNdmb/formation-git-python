@@ -31,6 +31,7 @@ Compilation de cours et tutoriels pour le développement web et la programmation
 ## Python
 
 - [Cours complet Python (Français)](https://www.youtube.com/watch?v=psaDHhZ0cPs&list=PLMS9Cy4Enq5JmIZtKE5OHJCI3jZfpASbR)
+- Leetcode 
 
 ## GitHub
 
