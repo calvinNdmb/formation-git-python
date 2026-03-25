@@ -74,11 +74,6 @@ git push -u origin ma-branche          # Push + définir le tracking (1ère fois
 git push --force-with-lease            # Force push sécurisé (vérifie que personne n'a push entre-temps)
 ```
 
-
-
-
-
-
 ### Stratégie de nommage courante
 
 | Préfixe | Usage |
@@ -140,43 +135,6 @@ En résumé : c'est un **processus de contrôle qualité** avant d'intégrer du 
 - Petites PRs = review plus rapide
 - Utiliser les **draft PRs** quand c'est encore en cours
 
-
-### Workflow classique
-
-```
-1. Créer une branche       →  git switch -c feature/truc
-2. Coder + commit + push   →  git push -u origin feature/truc
-3. Ouvrir une PR sur GitHub →  github.com/user/repo/compare
-4. Review par l'équipe      →  commentaires, suggestions, approve
-5. Merge la PR              →  squash, merge commit, ou rebase
-6. Supprimer la branche     →  bouton sur GitHub ou git push origin --delete
-```
-
-### Types de merge dans une PR
-
-| Type | Résultat |
-|---|---|
-| **Merge commit** | Garde tous les commits + un commit de merge |
-| **Squash and merge** | Combine tous les commits en un seul |
-| **Rebase and merge** | Rejoue les commits sur main (historique linéaire) |
-
-### Bonnes pratiques PR
-
-- Titre clair et descriptif, ex : `feat: add user authentication`
-- Description avec contexte, screenshots si UI
-- Petites PRs = review plus rapide
-- Utiliser les **draft PRs** quand c'est encore en cours
-
----
-
-
-
-
-
-
-
-
-
 ## 📂 Fichiers spéciaux GitHub
 
 | Fichier | Rôle |
@@ -184,5 +142,6 @@ En résumé : c'est un **processus de contrôle qualité** avant d'intégrer du 
 | `README.md` | Page d'accueil du repo |
 | `.gitignore` | Fichiers à ne pas tracker |
 | `LICENSE` | Licence du projet |
+| `.env` | Variables d'environnement (à ignorer !) |
 ---
 

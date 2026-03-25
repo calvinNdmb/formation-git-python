@@ -1,3 +1,5 @@
+# Mon mail :ndoumbecalvin@gmail.com
+
 # Ressources de formation
 
 Compilation de cours et tutoriels pour le développement web et la programmation.
@@ -15,7 +17,7 @@ Compilation de cours et tutoriels pour le développement web et la programmation
 
 ## n8n (Je ne suis pas spécialiste mais la formation est très complète)
 
-- [Cours n8n (Anglais)](https://www.youtube.com/watch?v=YjH8s9Xo2lE&list=PL4cUxeGkcC9hNTz3sxqGTfxAwU-DIHJd2)
+- [Cours n8n (Anglais)](https://youtu.be/TZ43SRdTMs0?si=adnXQ9Sm3EyfnNHP)
 
 ## Node.js
 
